@@ -33,27 +33,27 @@ node * insert(node * head, char ch){ // ----- Creating and Inserting a node with
 node * search(node * head, char ch){ // ----- Searchin the node with given char.
 	if(head == NULL)
 		return NULL;                   // If there is no list then there is none of nodes 
-	node * iter = head;               // with given char.
+	node * iter = head;                    // with given char.
 	while(iter != NULL){
 		if(iter -> letter == ch )      // If our loop find the char
-			return iter;				    // it returns the node.
+			return iter;	       // it returns the node.
 		iter = iter -> next;
 	}
-	return NULL;                      // If the loop couldn't find,it returns NULL.
+	return NULL;                           // If the loop couldn't find,it returns NULL.
 } // ---------------------------------------------------------------------------
 node * insertionSort(node * head, node * chOne){ // ----- This function is the where magic happens.
-	if(chOne -> next == NULL)                     // If list consists of a single node 
+	if(chOne -> next == NULL)                         // If list consists of a single node 
 		return head;                               // then sorted list is the same node.
 	if(chOne -> frequency < chOne -> next -> frequency) // If the choosen node already ordered.
 		return head;
-	node * iter = head;
-	if(chOne != head){                            // There is a given node to be applied sort
+	node * iter = head; 
+	if(chOne != head){                                 // There is a given node to be applied sort
 		while(iter -> next != chOne)
 			iter = iter -> next;
 		iter -> next = chOne -> next;              // Loop find that node and then there we are tearing its link 
 		iter = chOne;                              // Now we are searching from that node to find where to insert it.
 		while(iter -> next != NULL && iter -> next -> frequency <= chOne -> frequency){
-			iter = iter -> next;	                   // Searching until it finds a node with more frequency integer.
+			iter = iter -> next;	           // Searching until it finds a node with more frequency integer.
 		}
 		chOne -> next = iter -> next;              // Connecting new links.
 		iter -> next = chOne;
@@ -74,7 +74,7 @@ node * insertIternal(node * head,node * iternal){
 	node * iter = head;
 	while(iter -> next != NULL && iternal->frequency >= iter->next->frequency){
 		iter = iter -> next;         // Inserting internals by Insertion Sort method.
-	}                               // Every smaller frequency node left behind.
+	}                                    // Every smaller frequency node left behind.
 	iternal -> next = iter -> next;
 	iter -> next = iternal;
 	return head;
@@ -101,8 +101,8 @@ que * enQ(que ** head, que * last, node * data){ // ----- Creating a queue to pr
 	newnode -> nextq = NULL;                      // Itilazing queue's attributes.
 	newnode -> data = data;                       // ..
 	if(*head == NULL){                            // We are trying to insert a node pointer into queue
-		*head = newnode;                           // but if queue hasn't created yet ?
-		return newnode;                            // Then we are creating a new queue and then changing head as new node
+		*head = newnode;                      // but if queue hasn't created yet ?
+		return newnode;                       // Then we are creating a new queue and then changing head as new node
 	}
 	last -> nextq = newnode;
 	return newnode;                               // New created node is going to be our lastnode in the queue.
@@ -132,7 +132,7 @@ int main(){
 		size = 0;
 		getchar();                                           // Avoid around bug.
 		while(ch != '\n'){
-			ch = getchar();                                   // Taking input char by char.
+			ch = getchar();                              // Taking input char by char.
 			if(size >= length-10)
 				input = realloc(input,(length+=10)*sizeof(char));
 			input[size] = ch;
@@ -178,7 +178,7 @@ int main(){
 		que * qhead = NULL;
 		que * qlast = NULL;
 			// Necessary nodes have INITIALIZED.
-		while(temp != NULL){ 								            // Then we are starting to print our levels.
+		while(temp != NULL){ 					// Then we are starting to print our levels.
 			if(temp->letter != '\0')
 				printf("[%c]%d ",temp -> letter, temp -> frequency);  // First of all the node is printing its data.
 			else
@@ -187,12 +187,12 @@ int main(){
 			if(temp->left == NULL)
 				levelcheck +=2;
 			if(times == pow(2,level)){                          // If the printing node reached last node of 
-				printf("\n");                                    // current level then it prints a new line.
+				printf("\n");                               // current level then it prints a new line.
 				times = levelcheck;
 				level++; 
-				levelcheck = 0;                                  // Reset for the new level.
+				levelcheck = 0;                             // Reset for the new level.
 			}
-			if(temp -> left != NULL){                        // Then we are enqueue its left and right children if there is any.
+			if(temp -> left != NULL){                  // Then we are enqueue its left and right children if there is any.
 				qlast = enQ(&qhead, qlast, temp -> left);     
 				qlast = enQ(&qhead, qlast, temp -> right);
 			}
