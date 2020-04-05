@@ -5,6 +5,6 @@ Program can take inputs from file or command prompt by User's decision. Input pa
 
 You can easily understand program's run logic from comments where is written in the .c file. And there are some paint drawings about functions I coded. After all you can always send me e-mails about this repository.
 
-I draw some sketches about algortihm before coding and I wanted to attach it here so you can understand how to program works.
+I draw some sketches about algortihm before coding and I wanted to attach it here so you can understand how the program works.
 
 
