@@ -1,11 +1,3 @@
-.rotate180 {
-    -webkit-transform: rotate(180deg);
-    -moz-transform: rotate(180deg);
-    -o-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
-}
-
 # huffman-tree-DESIGN-USING-C-PROGRAMMING-LANGUAGE
 Hey ! It is my second assignment from "Data Structures and Algorithm" class that I took at Yildiz Technical University. This repository contains; code of program , screenshots while it is processing , and Assignment's description.
 
@@ -14,6 +6,3 @@ Program can take inputs from file or command prompt by User's decision. Input pa
 You can easily understand program's run logic from comments where is written in the .c file. And there are some paint drawings about functions I coded. After all you can always send me e-mails about this repository.
 
 I draw some sketches about algortihm before coding and I wanted to attach it here so you can understand how the program works.
-
-<img src="https://github.com/sercfornow/huffman-tree-DESIGN-USING-C-PROGRAMMING-LANGUAGE/blob/master/handsketch/10.jpg" class="rotate180">
-
